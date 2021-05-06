@@ -1,0 +1,182 @@
+
+.bg-top-pres{
+    background: #f3f3f3;
+    padding: 5px;
+}
+section.top-list-worklist {
+    width: 100%;
+    border: solid 3px #e1ecf1;
+    border-radius: 6px;
+    background: #fffbfb;
+    box-shadow: 0px 0px 3px #696767;
+   
+}
+.search-icon-doc{
+    position: absolute;
+    right: 9px;
+    top: 4px;
+    color: #797777;
+    z-index: 99;
+}
+section.top-list-worklist table th{
+    font-size: 14px !important;
+}
+section.top-list-worklist table td{
+    font-size: 14px !important;
+}
+.searchHeaderField .input-group-text{
+    border-left: 1px solid #a8d7ea;
+    height:28px;
+    border-radius: 16px 0px 0px 16px;
+    padding: 0px 9px;
+    font-size: 15px;
+    font-weight: bold;
+    width: auto;
+    display: block;
+    text-align: center;
+    line-height: 22px;
+}
+.doctpr-leb{
+    width: 107px !important;
+}
+.searchHeaderField .form-control{
+    height: 28px;
+    border-radius: 0px 16px 16px 0px; font-size: 16px;
+}
+.lebelBg {
+    width: 118px;
+    text-align: right !important;
+}
+.input-group.ExamSetup-type.InputDt {
+    margin-top: 3px;
+}
+.bg-gray{
+    background: #f7f7f7;
+}
+.radio-info-worklist .form-check.form-check-inline {
+    margin-top: 6px;
+    top: 7px;
+    position: relative;
+    margin-bottom: 9px;
+   
+}
+.top-list-worklist .form-check-label{
+    padding: 2px 6px;border-radius: 6px;
+}
+.all-color {
+    background: #085997;
+    color: #fff;
+    border: solid 1px #032642;    
+}
+.waiting-color {
+    background: #e0eef9;border: solid 1px #ddd;
+}
+.fresh-color {
+    background: #02950d;
+    color: #fff;
+    border: solid 1px #04770c;
+}
+.repor-color {
+    background: #d9f8db;
+    border: solid 1px #96d69a;
+}
+.follow-color {
+    background: #e8af0e;
+    border: solid 1px #b98b09;
+    color: #fff;
+}
+.done-color {
+    background: #c80000;
+    border: solid 1px #860505;
+    color: #fff;
+}
+.admitted-color {
+    background: #000dc8;
+    border: solid 1px #000dc8;
+    color: #fff;
+}
+.appointed-color {
+    background: #ffff00;
+    border: solid 1px #b3b305;
+}
+.tableGridAll {
+    height: auto;
+    border: solid 1px#679cb1;
+    border-top: solid 1px #679cb1!important;
+}
+tr.stickyWork td {
+    top: 21px;
+    position: sticky;
+    background: #eef1f3;
+}
+.tableGridAll span {
+    color: #000;
+}
+.btnsc2{
+    padding: 0px 10px;
+    font-size: 13px !important;
+}
+label.no-patient-notification {
+    width: auto;
+    margin: auto;
+    padding: 1px 90px;
+    border: solid 1px #f00;
+    color: #f00;
+    font-size: 14px;
+    border-radius: 40px;
+    background: #e3f4e3ee;
+    font-weight: bold;
+}
+
+tr.done-new {
+    background: #f00;
+    color: #fff;
+}
+tr.appointed {
+    background: #ff0;
+}
+
+.freshL{
+    background: #02950d !important;
+    /* background: #036c95 !important; */
+}
+.followL{
+    background: #f6b714 !important;
+}
+.followfirstL{
+    background: #009688 !important;
+}
+.doneL{
+    background: #bf0601 !important;
+}
+.ReportL{
+    background: #c9e8c7 !important;
+}
+.appointL{
+    background: #ffff00 !important;
+    /* background: #eaea00 !important; */
+}
+.cancelledL{
+    background: #800000 !important;
+}
+.watingL{
+    background: #ff8080;
+    border: solid 1px #000;
+}
+.colorB0 {
+    padding: 2px 9px;
+    border-radius: 34px;
+    left: 212px;
+    top:-6px;
+    z-index: 9;border: solid 1px #fff;
+    box-shadow: 0px 1px 2px #232323;margin-top: 11px !important;
+}
+.spanCheckText2{
+    width: 97px;
+    white-space: inherit;
+    position: relative;
+    left: 16px;
+    float: left;
+    font-size: 13px;
+    word-spacing: -1px;top: -1px;
+}
