@@ -28,6 +28,10 @@ export class ReportServiceService {
   private PATIENTCHEMOAPPOINTMENTSCHEDULE= `${this.BASE_URL}/patientchemoappointmentschedule`;
   private ONINITIALPORTOCOL= `${this.BASE_URL}/onInitialportocol`;
   private SALESREPORT= `${this.BASE_URL}/salesReport`;
+  private REGCARDREPORT= `${this.BASE_URL}/regCardReport`;
+  private LABELBARCODE= `${this.BASE_URL}/labelBarcode`;
+  private POSINVOICE= `${this.BASE_URL}/posInvoice`;
+  private MEDSTICKER= `${this.BASE_URL}/medSticker`;
   constructor(
     private http: HttpClient,
   ) { }
@@ -117,5 +121,21 @@ export class ReportServiceService {
   onInitialportocol(_reqObj: any): Observable<any> {
     const httpOptions = { 'responseType': 'arraybuffer' as 'json' };
     return this.http.post<any>(this.ONINITIALPORTOCOL, _reqObj, httpOptions);
+  }
+  regCardReport(_reqObj: any): Observable<any> {
+    const httpOptions = { 'responseType': 'arraybuffer' as 'json' };
+    return this.http.post<any>(this.REGCARDREPORT, _reqObj, httpOptions);
+  }
+  labelBarcode(_reqObj: any): Observable<any> {
+    const httpOptions = { 'responseType': 'arraybuffer' as 'json' };
+    return this.http.post<any>(this.LABELBARCODE, _reqObj, httpOptions);
+  }
+  posInvoice(_reqObj: any): Observable<any> {
+    const httpOptions = { 'responseType': 'arraybuffer' as 'json' };
+    return this.http.post<any>(this.POSINVOICE, _reqObj, httpOptions);
+  }
+  medSticker(_reqObj: any): Observable<any> {
+    const httpOptions = { 'responseType': 'arraybuffer' as 'json' };
+    return this.http.post<any>(this.MEDSTICKER, _reqObj, httpOptions);
   }
 }

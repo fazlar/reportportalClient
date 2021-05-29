@@ -104,6 +104,11 @@ setTimeout(()=>{
           name: 'rptName'
         },
         {
+          title: 'Report Details',
+          data: 'dtl',
+          name: 'dtl'
+        },
+        {
           title: 'Format',
           data: 'rptFormat',
           name: 'rptFormat'
@@ -121,84 +126,7 @@ setTimeout(()=>{
             return '<button type="button" class="btn btn-info rounded printPres">Print</button>';
           }
         },
-        // {
-        //   title: 'Admission Id',
-        //   data: 'admissionId',
-        //   name: 'admissionId'
-        // },
-        // {
-        //   title: 'Department Name',
-        //   data: 'buName',
-        //   name: 'buName',
-        //   orderable: false,
-        // },
-        // {
-        //   title: 'Mobile',
-        //   data: 'phonMobile',
-        //   name: 'phonMobile',
-        //   orderable: false,
-        // },
-        // // {
-        // //   title: 'Adm Date',
-        // //   data: 'admissionDateTime',
-        // //   render: (data) => {
-        // //     return data ? moment(new Date(data)).format('DD-MM-YYYY hh:mm A').toString() : null;
-        // //   }
-        // // },
-        // // {
-        // //   title: 'Req. Date',
-        // //   data: 'disReqTime',
-        // //   render: (data) => {
-        // //     return data ? moment(data).format('DD-MM-YYYY hh:mm A').toString() : null;
-        // //   }
-        // // },
-        // // {
-        // //   title: 'Dis. Date',
-        // //   data: 'disDateTime',
-        // //   render: (data) => {
-        // //     return data ? moment(data).format('DD-MM-YYYY hh:mm A').toString() : null;
-        // //   }
-        // // },
-        // {
-        //   title: 'Admission Type',
-        //   data: 'admissionType',
-        //   name: 'admissionType',
-        //   orderable: false,
-        // },
-        // {
-        //   orderable: false,
-        //   title: 'Dis. Sum. Status',
-        //   render: (data, type, row) => {
-        //     let resState: string;
-        //     if (row.disSumStatus == 1) {
-        //       resState = '<i class="far fa-check-square checkIcon"></i>';
-        //     } else {
-        //       resState = '';
-        //     }
-        //     return resState;
-        //   }
-        // },
-        // {
-        //   title: 'Action',
-        //   'orderable': false,
-        //   class: 'text-center',
-        //   render: (data, type, row) => {
-        //     return '<button type="button" class="btn  rounded discharge-btn" value="D" ></button>';
-        //   }
-        // },
-        // {
-        //   visible: false,
-        //   data: 'disFinalizedBy',
-        //   name: 'disFinalizedBy'
-        // },
-        // {
-        //   title: '',
-        //   'orderable': false,
-        //   class: 'text-center',
-        //   render: (data, type, row) => {
-        //     return '<button type="button" class="btn btn-info rounded printPres">Print</button>';
-        //   }
-        // },
+        
       ],
 
       select: true,
@@ -318,6 +246,27 @@ else if(data.rptId===22){
 else if(data.rptId===23){
   this.printBookingRpt();
  
+}
+else if(data.rptId===24){
+  this.regCardReport();
+ 
+}
+else if(data.rptId===25){
+  this.labelBarcode();
+ 
+}
+else if(data.rptId===26){
+  this.posInvoice();
+ 
+}
+else if(data.rptId===27){
+  this.medSticker();
+ 
+}else if(data.rptId===28){
+  this.rptCode="3"
+  this.pringFormat="pdf"
+  this.salesReport();
+
 }
 else{
   alert('Report Not found')
@@ -693,6 +642,82 @@ onInitialportocol(){
     "rptCode": this.rptCode
   }
   this.reportService.onInitialportocol(reqObj).subscribe(
+    res => {
+      // this.printBtn = false;
+      let file = new Blob([res], { type: this.coreUtilService.printFormat("PDF") });
+      var fileURL = URL.createObjectURL(file);
+      window.open(fileURL);
+      // this.removeLoader();
+    },
+    err => {
+      console.log(" Error occured in Registration card generation..", err);
+      // this.printBtn = false;
+      //     this.removeLoader();
+    }
+  )
+}
+regCardReport(){
+  const reqObj={
+    "rptCode": this.rptCode
+  }
+  this.reportService.regCardReport(reqObj).subscribe(
+    res => {
+      // this.printBtn = false;
+      let file = new Blob([res], { type: this.coreUtilService.printFormat("PDF") });
+      var fileURL = URL.createObjectURL(file);
+      window.open(fileURL);
+      // this.removeLoader();
+    },
+    err => {
+      console.log(" Error occured in Registration card generation..", err);
+      // this.printBtn = false;
+      //     this.removeLoader();
+    }
+  )
+}
+labelBarcode(){
+  const reqObj={
+    "rptCode": this.rptCode
+  }
+  this.reportService.labelBarcode(reqObj).subscribe(
+    res => {
+      // this.printBtn = false;
+      let file = new Blob([res], { type: this.coreUtilService.printFormat("PDF") });
+      var fileURL = URL.createObjectURL(file);
+      window.open(fileURL);
+      // this.removeLoader();
+    },
+    err => {
+      console.log(" Error occured in Registration card generation..", err);
+      // this.printBtn = false;
+      //     this.removeLoader();
+    }
+  )
+}
+posInvoice(){
+  const reqObj={
+    "rptCode": this.rptCode
+  }
+  this.reportService.posInvoice(reqObj).subscribe(
+    res => {
+      // this.printBtn = false;
+      let file = new Blob([res], { type: this.coreUtilService.printFormat("PDF") });
+      var fileURL = URL.createObjectURL(file);
+      window.open(fileURL);
+      // this.removeLoader();
+    },
+    err => {
+      console.log(" Error occured in Registration card generation..", err);
+      // this.printBtn = false;
+      //     this.removeLoader();
+    }
+  )
+}
+medSticker(){
+  const reqObj={
+    "rptCode": this.rptCode
+  }
+  this.reportService.medSticker(reqObj).subscribe(
     res => {
       // this.printBtn = false;
       let file = new Blob([res], { type: this.coreUtilService.printFormat("PDF") });
