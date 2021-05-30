@@ -32,6 +32,7 @@ export class ReportServiceService {
   private LABELBARCODE= `${this.BASE_URL}/labelBarcode`;
   private POSINVOICE= `${this.BASE_URL}/posInvoice`;
   private MEDSTICKER= `${this.BASE_URL}/medSticker`;
+  private EMPCARDREPORT= `${this.BASE_URL}/empCardReport`;
   constructor(
     private http: HttpClient,
   ) { }
@@ -125,6 +126,11 @@ export class ReportServiceService {
   regCardReport(_reqObj: any): Observable<any> {
     const httpOptions = { 'responseType': 'arraybuffer' as 'json' };
     return this.http.post<any>(this.REGCARDREPORT, _reqObj, httpOptions);
+  }
+
+  empCardReport(_reqObj: any): Observable<any> {
+    const httpOptions = { 'responseType': 'arraybuffer' as 'json' };
+    return this.http.post<any>(this.EMPCARDREPORT, _reqObj, httpOptions);
   }
   labelBarcode(_reqObj: any): Observable<any> {
     const httpOptions = { 'responseType': 'arraybuffer' as 'json' };

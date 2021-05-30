@@ -252,17 +252,23 @@ else if(data.rptId===24){
  
 }
 else if(data.rptId===25){
-  this.labelBarcode();
+  this.empCardReport();
  
 }
 else if(data.rptId===26){
-  this.posInvoice();
+  this.labelBarcode();
  
 }
 else if(data.rptId===27){
-  this.medSticker();
+  this.posInvoice();
  
 }else if(data.rptId===28){
+  this.rptCode="3"
+  this.pringFormat="pdf"
+  this.medSticker();
+
+}
+else if(data.rptId===29){
   this.rptCode="3"
   this.pringFormat="pdf"
   this.salesReport();
@@ -732,4 +738,24 @@ medSticker(){
     }
   )
 }
+empCardReport(){
+  const reqObj={
+    "rptCode": this.rptCode
+  }
+  this.reportService.empCardReport(reqObj).subscribe(
+    res => {
+      // this.printBtn = false;
+      let file = new Blob([res], { type: this.coreUtilService.printFormat("PDF") });
+      var fileURL = URL.createObjectURL(file);
+      window.open(fileURL);
+      // this.removeLoader();
+    },
+    err => {
+      console.log(" Error occured in Registration card generation..", err);
+      // this.printBtn = false;
+      //     this.removeLoader();
+    }
+  )
+}
+
 }
